@@ -1,0 +1,167 @@
+/* styles.css */
+
+/* Variables globales */
+:root {
+  /* Paleta de colores */
+  --color-success: #28a745;
+  --color-success-dark: #218838;
+  --color-danger: #dc3545;
+  --color-danger-dark: #c82333;
+  --color-background: #f4f4f4;
+  --color-white: white;
+  --color-gray: #ccc;
+  --color-gray-light: #e9ecef;
+  --color-text: #333;
+
+  /* Espaciado común */
+  --spacing-base: 10px;
+  --spacing-small: 5px;
+  --spacing-medium: 15px;
+  --spacing-large: 20px;
+
+  /* Bordes y sombras */
+  --border-radius: 5px;
+  --border-radius-large: 10px;
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos base del documento */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: var(--spacing-base);
+}
+
+/* Contenedor principal */
+.container {
+  background: var(--color-white);
+  padding: var(--spacing-large);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Estilos del título */
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-large);
+  /* gradiente */
+  background: linear-gradient(
+    to right,
+    var(--color-success),
+    var(--color-success-dark)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Contenedor de entrada */
+.input-container {
+  display: flex;
+  gap: var(--spacing-base);
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Estilos de entrada de texto */
+input {
+  flex: 1;
+  padding: var(--spacing-base);
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+/* Estilos base de botones */
+button {
+  padding: var(--spacing-base) var(--spacing-base);
+  border: none;
+  background: var(--color-success);
+  color: var(--color-white);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: var(--color-success-dark);
+}
+
+/* Estilos específicos del botón eliminar */
+button.eliminar {
+  background: var(--color-danger);
+  padding: calc(var(--spacing-base) - 2px) var(--spacing-base);
+  flex-shrink: 0;
+  width: 80px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+button.eliminar:hover {
+  background: var(--color-danger-dark);
+}
+
+/* Estilos de la lista */
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  background: var(--color-gray-light);
+  padding: var(--spacing-base);
+  margin: var(--spacing-small) 0;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  min-height: 40px;
+  word-break: break-word;
+}
+
+/* Diseño Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-medium);
+    max-width: 90%;
+  }
+
+  .input-container {
+    flex-direction: column;
+    gap: var(--spacing-small);
+    width: 100%;
+    align-items: center;
+  }
+
+  input,
+  button {
+    width: 90%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-base);
+  }
+
+  button.eliminar {
+    margin-top: var(--spacing-small);
+    width: 100%;
+    max-width: 120px;
+  }
+}

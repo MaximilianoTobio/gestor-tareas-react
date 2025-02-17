@@ -63,3 +63,8 @@ Luego, abre en tu navegador:
 ```bash
 http://localhost:5173/
 ```
+
+<p align="center">
+  <img src="screenshot/landing.jpeg" alt="Vista" width="395">
+  <img src="screenshot/tasks.jpeg" alt="Tareas" width="400">
+</p>
